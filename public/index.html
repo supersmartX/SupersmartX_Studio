@@ -222,6 +222,24 @@
                     </div>
                     <input id="areaWidthInput" type="range" min="320" max="800" value="448" class="w-full h-1 bg-slate-800 rounded-lg appearance-none cursor-pointer accent-teal-custom">
                 </div>
+
+                <!-- Reading Area Height -->
+                <div class="flex flex-col gap-2">
+                    <div class="flex justify-between items-center text-xs text-slate-400">
+                        <label class="font-semibold">Reading Area Height</label>
+                        <span id="areaHeightVal" class="text-teal-custom font-mono">80%</span>
+                    </div>
+                    <input id="areaHeightInput" type="range" min="30" max="100" value="80" class="w-full h-1 bg-slate-800 rounded-lg appearance-none cursor-pointer accent-teal-custom">
+                </div>
+
+                <!-- Text Start Position (Vertical) -->
+                <div class="flex flex-col gap-2">
+                    <div class="flex justify-between items-center text-xs text-slate-400">
+                        <label class="font-semibold">Text Start Position (Vertical)</label>
+                        <span id="textStartPosVal" class="text-teal-custom font-mono">15%</span>
+                    </div>
+                    <input id="textStartPosInput" type="range" min="0" max="90" value="15" class="w-full h-1 bg-slate-800 rounded-lg appearance-none cursor-pointer accent-teal-custom">
+                </div>
                 
                 <!-- Focus View -->
                 <div class="pt-4 border-t border-custom">
@@ -643,6 +661,10 @@
         const fontValue = document.getElementById('fontValue');
         const areaWidthInput = document.getElementById('areaWidthInput');
         const areaWidthVal = document.getElementById('areaWidthVal');
+        const areaHeightInput = document.getElementById('areaHeightInput');
+        const areaHeightVal = document.getElementById('areaHeightVal');
+        const textStartPosInput = document.getElementById('textStartPosInput');
+        const textStartPosVal = document.getElementById('textStartPosVal');
         const focusViewToggle = document.getElementById('focusViewToggle');
         
         const initOverlay = document.getElementById('initOverlay');
@@ -762,6 +784,18 @@
             prompterContent.style.maxWidth = val + 'px';
         });
 
+        areaHeightInput.addEventListener('input', (e) => {
+            const val = e.target.value;
+            areaHeightVal.textContent = val + '%';
+            prompterContainer.style.height = val + '%';
+        });
+
+        textStartPosInput.addEventListener('input', (e) => {
+            const val = e.target.value;
+            textStartPosVal.textContent = val + '%';
+            prompterContent.style.paddingTop = val + '%';
+        });
+
         fontFamilySelector.addEventListener('change', (e) => {
             prompterContent.style.fontFamily = e.target.value;
         });
@@ -777,6 +811,8 @@
         // Apply defaults
         prompterContent.style.fontFamily = fontFamilySelector.value;
         prompterContent.style.maxWidth = areaWidthInput.value + 'px';
+        prompterContainer.style.height = areaHeightInput.value + '%';
+        prompterContent.style.paddingTop = textStartPosInput.value + '%';
         loadScript();
 
         // Camera Init
