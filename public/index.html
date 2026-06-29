@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SupersmartX Studio</title>
+    <link rel="icon" type="image/png" href="SXS_ICON.png">
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
         tailwind.config = {
@@ -75,27 +76,11 @@
             <div class="absolute -top-24 -left-24 w-48 h-48 bg-teal-custom/10 rounded-full blur-3xl pointer-events-none"></div>
             
             <div class="relative flex flex-col items-center text-center my-auto">
-                <div class="w-16 h-16 md:w-20 md:h-20 flex items-center justify-center mb-4 md:mb-6">
-                    <svg viewBox="0 0 100 100" class="w-full h-full drop-shadow-[0_0_15px_rgba(37,99,235,0.3)]" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <defs>
-                            <linearGradient id="logoBlue" x1="0%" y1="0%" x2="100%" y2="100%">
-                                <stop offset="0%" stop-color="#60a5fa" />
-                                <stop offset="50%" stop-color="#2563eb" />
-                                <stop offset="100%" stop-color="#1d4ed8" />
-                            </linearGradient>
-                            <linearGradient id="logoSilver" x1="0%" y1="0%" x2="100%" y2="100%">
-                                <stop offset="0%" stop-color="#ffffff" />
-                                <stop offset="40%" stop-color="#e2e8f0" />
-                                <stop offset="70%" stop-color="#94a3b8" />
-                                <stop offset="100%" stop-color="#475569" />
-                            </linearGradient>
-                        </defs>
-                        <path d="M 24,44 C 24,32 34,22 48,22 H 84 L 72,38 H 48 C 44,38 41,41 41,45 C 41,49 44,52 48,52 H 66 C 78,52 88,62 88,74 C 88,86 78,96 66,96 H 24 L 36,80 H 66 C 70,80 73,77 73,73 C 73,69 70,66 66,66 H 48 C 34,66 24,56 24,44 Z" fill="url(#logoBlue)" />
-                        <path d="M 40,22 L 58,40 L 76,22 H 91 L 67,52 L 91,82 H 76 L 58,64 L 40,82 H 25 L 49,52 L 25,22 H 40 Z" fill="url(#logoSilver)" />
-                    </svg>
+                <div class="w-20 h-20 md:w-24 md:h-24 flex items-center justify-center mb-4 md:mb-6">
+                    <img src="SXS_ICON.png" alt="SupersmartX Logo" class="w-full h-full object-contain drop-shadow-[0_0_15px_rgba(37,99,235,0.4)]">
                 </div>
                 
-                <h1 class="text-xl md:text-3xl font-black text-slate-100 mb-2 md:mb-3 tracking-tight">Welcome to SupersmartX Studio</h1>
+                <h1 class="text-xl md:text-3xl font-black text-slate-100 mb-2 md:mb-3 tracking-tight">Welcome to <span class="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-blue-500">SUPERSMART<span class="text-slate-100 font-black">X</span></span> Studio</h1>
                 <p class="text-xs md:text-base text-slate-400 mb-6 md:mb-8 max-w-md leading-relaxed">
                     Read naturally, maintain better eye contact, and record professional videos—all from your browser.
                 </p>
@@ -155,27 +140,11 @@
     <header class="h-12 border-b border-custom flex items-center px-4 justify-between shrink-0 bg-custom-panel">
         <div class="flex items-center gap-4">
             <div class="flex items-center gap-2.5">
-                <div class="w-7 h-7">
-                    <svg viewBox="0 0 100 100" class="w-full h-full drop-shadow-[0_0_10px_rgba(37,99,235,0.25)]" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <defs>
-                            <linearGradient id="logoBlueHeader" x1="0%" y1="0%" x2="100%" y2="100%">
-                                <stop offset="0%" stop-color="#60a5fa" />
-                                <stop offset="50%" stop-color="#2563eb" />
-                                <stop offset="100%" stop-color="#1d4ed8" />
-                            </linearGradient>
-                            <linearGradient id="logoSilverHeader" x1="0%" y1="0%" x2="100%" y2="100%">
-                                <stop offset="0%" stop-color="#ffffff" />
-                                <stop offset="40%" stop-color="#e2e8f0" />
-                                <stop offset="70%" stop-color="#94a3b8" />
-                                <stop offset="100%" stop-color="#475569" />
-                            </linearGradient>
-                        </defs>
-                        <path d="M 24,44 C 24,32 34,22 48,22 H 84 L 72,38 H 48 C 44,38 41,41 41,45 C 41,49 44,52 48,52 H 66 C 78,52 88,62 88,74 C 88,86 78,96 66,96 H 24 L 36,80 H 66 C 70,80 73,77 73,73 C 73,69 70,66 66,66 H 48 C 34,66 24,56 24,44 Z" fill="url(#logoBlueHeader)" />
-                        <path d="M 40,22 L 58,40 L 76,22 H 91 L 67,52 L 91,82 H 76 L 58,64 L 40,82 H 25 L 49,52 L 25,22 H 40 Z" fill="url(#logoSilverHeader)" />
-                    </svg>
+                <div class="w-8 h-8 flex items-center justify-center">
+                    <img src="SXS_ICON.png" alt="SupersmartX Logo" class="w-full h-full object-contain">
                 </div>
                 <div class="flex flex-col">
-                    <span class="text-xs font-black text-slate-100 tracking-wider">SUPERSMARTX</span>
+                    <span class="text-xs font-black tracking-wider text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-blue-500">SUPERSMART<span class="text-slate-100 font-black">X</span></span>
                     <span class="text-[8px] font-bold text-slate-400 tracking-widest uppercase -mt-1">STUDIO</span>
                 </div>
             </div>
