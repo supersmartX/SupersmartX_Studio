@@ -1,0 +1,11 @@
+{
+  "name": "Teleprompter Studio",
+  "description": "Interactive Teleprompter and Video Script Reader.",
+  "requestFramePermissions": [
+    "camera",
+    "microphone"
+  ],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}
