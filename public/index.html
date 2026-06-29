@@ -10,7 +10,8 @@
             theme: {
                 extend: {
                     colors: {
-                        'teal-custom': '#14b8a6',
+                        'teal-custom': '#2563eb',
+                        'teal-400': '#60a5fa',
                     }
                 }
             }
@@ -23,9 +24,9 @@
         .bg-custom { background-color: #0f1416; }
         .bg-custom-panel { background-color: #151a1e; }
         .bg-custom-hover { background-color: #1e2528; }
-        .text-teal-custom { color: #14b8a6; }
-        .bg-teal-custom { background-color: #14b8a6; }
-        .ring-teal-custom { --tw-ring-color: #14b8a6; }
+        .text-teal-custom { color: #2563eb; }
+        .bg-teal-custom { background-color: #2563eb; }
+        .ring-teal-custom { --tw-ring-color: #2563eb; }
         
         @keyframes modal-in {
             from { opacity: 0; transform: scale(0.95); }
@@ -59,7 +60,7 @@
             width: 14px;
             height: 14px;
             border-radius: 50%;
-            background: #14b8a6;
+            background: #2563eb;
             cursor: pointer;
         }
     </style>
@@ -74,8 +75,24 @@
             <div class="absolute -top-24 -left-24 w-48 h-48 bg-teal-custom/10 rounded-full blur-3xl pointer-events-none"></div>
             
             <div class="relative flex flex-col items-center text-center my-auto">
-                <div class="w-10 h-10 md:w-12 md:h-12 rounded-xl bg-teal-custom/20 text-teal-custom flex items-center justify-center font-bold text-base md:text-lg mb-4 md:mb-6 border border-teal-custom/20 shadow-[0_0_15px_rgba(20,184,166,0.1)]">
-                    SX
+                <div class="w-16 h-16 md:w-20 md:h-20 flex items-center justify-center mb-4 md:mb-6">
+                    <svg viewBox="0 0 100 100" class="w-full h-full drop-shadow-[0_0_15px_rgba(37,99,235,0.3)]" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <defs>
+                            <linearGradient id="logoBlue" x1="0%" y1="0%" x2="100%" y2="100%">
+                                <stop offset="0%" stop-color="#60a5fa" />
+                                <stop offset="50%" stop-color="#2563eb" />
+                                <stop offset="100%" stop-color="#1d4ed8" />
+                            </linearGradient>
+                            <linearGradient id="logoSilver" x1="0%" y1="0%" x2="100%" y2="100%">
+                                <stop offset="0%" stop-color="#ffffff" />
+                                <stop offset="40%" stop-color="#e2e8f0" />
+                                <stop offset="70%" stop-color="#94a3b8" />
+                                <stop offset="100%" stop-color="#475569" />
+                            </linearGradient>
+                        </defs>
+                        <path d="M 24,44 C 24,32 34,22 48,22 H 84 L 72,38 H 48 C 44,38 41,41 41,45 C 41,49 44,52 48,52 H 66 C 78,52 88,62 88,74 C 88,86 78,96 66,96 H 24 L 36,80 H 66 C 70,80 73,77 73,73 C 73,69 70,66 66,66 H 48 C 34,66 24,56 24,44 Z" fill="url(#logoBlue)" />
+                        <path d="M 40,22 L 58,40 L 76,22 H 91 L 67,52 L 91,82 H 76 L 58,64 L 40,82 H 25 L 49,52 L 25,22 H 40 Z" fill="url(#logoSilver)" />
+                    </svg>
                 </div>
                 
                 <h1 class="text-xl md:text-3xl font-black text-slate-100 mb-2 md:mb-3 tracking-tight">Welcome to SupersmartX Studio</h1>
@@ -137,8 +154,30 @@
     <!-- Top Navigation Bar -->
     <header class="h-12 border-b border-custom flex items-center px-4 justify-between shrink-0 bg-custom-panel">
         <div class="flex items-center gap-4">
-            <div class="w-8 h-8 rounded-lg bg-teal-custom/20 text-teal-custom flex items-center justify-center font-bold text-xs">
-                SX
+            <div class="flex items-center gap-2.5">
+                <div class="w-7 h-7">
+                    <svg viewBox="0 0 100 100" class="w-full h-full drop-shadow-[0_0_10px_rgba(37,99,235,0.25)]" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <defs>
+                            <linearGradient id="logoBlueHeader" x1="0%" y1="0%" x2="100%" y2="100%">
+                                <stop offset="0%" stop-color="#60a5fa" />
+                                <stop offset="50%" stop-color="#2563eb" />
+                                <stop offset="100%" stop-color="#1d4ed8" />
+                            </linearGradient>
+                            <linearGradient id="logoSilverHeader" x1="0%" y1="0%" x2="100%" y2="100%">
+                                <stop offset="0%" stop-color="#ffffff" />
+                                <stop offset="40%" stop-color="#e2e8f0" />
+                                <stop offset="70%" stop-color="#94a3b8" />
+                                <stop offset="100%" stop-color="#475569" />
+                            </linearGradient>
+                        </defs>
+                        <path d="M 24,44 C 24,32 34,22 48,22 H 84 L 72,38 H 48 C 44,38 41,41 41,45 C 41,49 44,52 48,52 H 66 C 78,52 88,62 88,74 C 88,86 78,96 66,96 H 24 L 36,80 H 66 C 70,80 73,77 73,73 C 73,69 70,66 66,66 H 48 C 34,66 24,56 24,44 Z" fill="url(#logoBlueHeader)" />
+                        <path d="M 40,22 L 58,40 L 76,22 H 91 L 67,52 L 91,82 H 76 L 58,64 L 40,82 H 25 L 49,52 L 25,22 H 40 Z" fill="url(#logoSilverHeader)" />
+                    </svg>
+                </div>
+                <div class="flex flex-col">
+                    <span class="text-xs font-black text-slate-100 tracking-wider">SUPERSMARTX</span>
+                    <span class="text-[8px] font-bold text-slate-400 tracking-widest uppercase -mt-1">STUDIO</span>
+                </div>
             </div>
             <div class="w-64 h-8 bg-[#0f1416] rounded-md border border-custom flex items-center px-3 text-slate-500 hidden sm:flex">
                 <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg>
@@ -317,7 +356,7 @@
             <div id="tab-discussion" class="tab-pane flex-1 flex flex-col min-h-0 relative">
                 <!-- Pre-Roll Overlay -->
                 <div id="countdownOverlay" class="absolute inset-0 bg-[#0f1416]/90 backdrop-blur-sm z-50 flex items-center justify-center opacity-0 pointer-events-none transition-opacity duration-300">
-                    <span id="countdownText" class="text-8xl font-black text-teal-custom drop-shadow-[0_0_40px_rgba(20,184,166,0.6)]">3</span>
+                    <span id="countdownText" class="text-8xl font-black text-teal-custom drop-shadow-[0_0_40px_rgba(37,99,235,0.6)]">3</span>
                 </div>
                 
                 <div id="initOverlay" class="absolute inset-0 bg-[#0f1416]/90 backdrop-blur-md z-40 flex flex-col items-center justify-center transition-opacity duration-500">
@@ -327,7 +366,7 @@
                         </div>
                         <h3 class="text-xl font-bold text-slate-200 mb-2">Studio Ready</h3>
                         <p class="text-sm text-slate-400 mb-8 leading-relaxed">Enable your camera and microphone to begin recording. Everything stays on your device.</p>
-                        <button id="initCameraBtn" class="px-6 py-3.5 bg-teal-custom hover:bg-teal-400 text-slate-900 rounded-xl font-bold transition-all active:scale-95 shadow-[0_0_20px_rgba(20,184,166,0.2)] w-full text-sm md:text-base">
+                        <button id="initCameraBtn" class="px-6 py-3.5 bg-teal-custom hover:bg-teal-400 text-slate-900 rounded-xl font-bold transition-all active:scale-95 shadow-[0_0_20px_rgba(37,99,235,0.2)] w-full text-sm md:text-base">
                             Enable Camera & Microphone
                         </button>
                     </div>
@@ -353,7 +392,7 @@
                             <div class="absolute inset-0 h-[1px] bg-gradient-to-r from-transparent via-teal-custom/40 to-transparent"></div>
                             
                             <!-- Centered Label -->
-                            <div id="focalGuideway" class="relative bg-teal-custom/90 backdrop-blur-sm px-2.5 py-0.5 rounded text-[10px] font-black tracking-tight text-slate-900 border border-teal-custom shadow-[0_0_15px_rgba(20,184,166,0.3)] uppercase transition-opacity duration-300">
+                            <div id="focalGuideway" class="relative bg-teal-custom/90 backdrop-blur-sm px-2.5 py-0.5 rounded text-[10px] font-black tracking-tight text-slate-900 border border-teal-custom shadow-[0_0_15px_rgba(37,99,235,0.3)] uppercase transition-opacity duration-300">
                                 Natural Eye Line
                             </div>
                         </div>
@@ -381,7 +420,7 @@
                             <div class="flex items-center gap-2 md:gap-3">
                                 <button id="resetBtn" class="text-xs font-semibold text-slate-400 hover:text-slate-200 px-2 md:px-3 py-1.5 transition-colors" aria-label="Clear Script">Clear Script</button>
                                 
-                                <button id="masterRecordBtn" class="px-4 md:px-5 py-2 bg-teal-custom hover:bg-teal-400 text-slate-900 rounded-lg text-xs md:text-sm font-bold transition-all shadow-[0_0_15px_rgba(20,184,166,0.3)] flex items-center gap-2 disabled:opacity-50" disabled aria-label="Start Recording">
+                                <button id="masterRecordBtn" class="px-4 md:px-5 py-2 bg-teal-custom hover:bg-teal-400 text-slate-900 rounded-lg text-xs md:text-sm font-bold transition-all shadow-[0_0_15px_rgba(37,99,235,0.3)] flex items-center gap-2 disabled:opacity-50" disabled aria-label="Start Recording">
                                     🔴 Start Recording
                                 </button>
                                 
