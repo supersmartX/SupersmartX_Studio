@@ -5,6 +5,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SupersmartX Studio</title>
     <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'teal-custom': '#14b8a6',
+                    }
+                }
+            }
+        }
+    </script>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
     <style>
         body { font-family: 'Inter', sans-serif; background-color: #0f1416; color: #e2e8f0; }
@@ -348,6 +359,10 @@
                                     🔴 Start Recording
                                 </button>
                                 
+                                <button id="pauseRecordBtn" class="hidden px-4 md:px-5 py-2 bg-yellow-500/10 hover:bg-yellow-500/20 text-yellow-500 border border-yellow-500/20 rounded-lg text-xs md:text-sm font-bold transition-all flex items-center gap-2" aria-label="Pause Recording">
+                                    ⏸️ Pause
+                                </button>
+                                
                                 <button id="stopBtn" class="hidden px-4 md:px-5 py-2 bg-red-500/10 hover:bg-red-500/20 text-red-500 border border-red-500/20 rounded-lg text-xs md:text-sm font-bold transition-all flex items-center gap-2" aria-label="Stop Recording">
                                     <div class="w-2 h-2 bg-red-500 rounded-sm"></div> Stop
                                 </button>
@@ -672,6 +687,7 @@
         const webcamVideo = document.getElementById('webcamVideo');
         
         const masterRecordBtn = document.getElementById('masterRecordBtn');
+        const pauseRecordBtn = document.getElementById('pauseRecordBtn');
         const stopBtn = document.getElementById('stopBtn');
         const resetBtn = document.getElementById('resetBtn');
         const countdownOverlay = document.getElementById('countdownOverlay');
@@ -692,6 +708,7 @@
         // State
         let stream = null;
         let isRecording = false;
+        let isPaused = false;
         let isScrolling = false;
         let animationFrameId = null;
         
@@ -919,14 +936,41 @@
 
             videoRecorder.start();
             isRecording = true;
+            isPaused = false;
             isScrolling = true;
             
             // UI Transition
             masterRecordBtn.classList.add('hidden');
+            pauseRecordBtn.classList.remove('hidden');
+            pauseRecordBtn.innerHTML = '⏸️ Pause';
             stopBtn.classList.remove('hidden');
             
             // Start Engine
             animationFrameId = requestAnimationFrame(scrollLoop);
+        };
+
+        const togglePauseRecordingSession = () => {
+            if (!isRecording) return;
+
+            if (!isPaused) {
+                isPaused = true;
+                isScrolling = false;
+                cancelAnimationFrame(animationFrameId);
+                
+                if (videoRecorder && videoRecorder.state === 'recording') videoRecorder.pause();
+                if (audioRecorder && audioRecorder.state === 'recording') audioRecorder.pause();
+                
+                pauseRecordBtn.innerHTML = '▶️ Resume';
+            } else {
+                isPaused = false;
+                isScrolling = true;
+                animationFrameId = requestAnimationFrame(scrollLoop);
+                
+                if (videoRecorder && videoRecorder.state === 'paused') videoRecorder.resume();
+                if (audioRecorder && audioRecorder.state === 'paused') audioRecorder.resume();
+                
+                pauseRecordBtn.innerHTML = '⏸️ Pause';
+            }
         };
 
         const stopRecordingSession = () => {
@@ -939,9 +983,11 @@
             if (audioRecorder && audioRecorder.state !== 'inactive') audioRecorder.stop();
             
             isRecording = false;
+            isPaused = false;
             
             // UI Revert
             stopBtn.classList.add('hidden');
+            pauseRecordBtn.classList.add('hidden');
             masterRecordBtn.classList.remove('hidden');
             
             // Show Export Modal
@@ -954,6 +1000,7 @@
         };
 
         masterRecordBtn.addEventListener('click', startRecordingSession);
+        pauseRecordBtn.addEventListener('click', togglePauseRecordingSession);
         stopBtn.addEventListener('click', stopRecordingSession);
 
         closeDrawerBtn.addEventListener('click', () => {
